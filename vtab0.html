@@ -1,0 +1,74 @@
+<script>
+function initSlider() {
+	$('#slider').nivoSlider({effect: 'fade'});
+}
+</script>
+
+<div style="text-align: center">
+    <div class="slider-wrapper theme-default">
+        <div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <img src="img/Slider-BtscPhoto.jpg" title="The BT Speechcard" />
+            <img src="img/Slider-BtscMenu.png" title="A Speechcard app in Turbo Vision. All C++ and OO, but pre-Windows!" />
+            <img src="img/Slider-Abseiling.png" title="Abseiling (as Fred Flintstone) from Adastral Park Radio Tower for Cancer Research" />
+        </div>
+    </div>
+</div>
+
+<h3>About the BT Speechcard</h3>
+
+<p>This was my first "commercial strength" project, and it dates back to the late 1980s and the very early
+days of interactive telephone services.</p>
+
+<p>At this time, general purpose computers still didn't have the necessary horsepower to carry out real-time
+signal processing tasks, and the market was finding a growing number of applications for dedicated digital signal processing chips such as the
+<a href="http://en.wikipedia.org/wiki/Texas_Instruments_TMS320">Texas Instruments TMS320</a>. One such product was the VOTAN V5000 speech system, 
+which was an IDE-format circuit board that plugged into an IBM PC-XT to enable it to carry out recording, playback and template-based
+isolated-word speech recognition. BT obviously had a huge potential market for interactive speech applications, and it ran a number of human factors 
+trials of "smart" answering machines, as well as an interactive voice-operated game called "The Train Game", which was a first-person adventure game 
+based on chasing and apprehending a murderer on the London Underground. My boss at the time wrote the application (in IBM BASIC!) and I helped manage the system
+and analyse the results. This also entailed spending a day in a recording studio with Joe Grundy from The Archers, who provided the voice. The Guardian 
+ran a technology feature on the trial, and our paltry 4-line installation was inundated with calls day and night for the week that the trial was live.</p>
+
+<p>As well as a huge market however, BT also had a great deal of in-house expertise
+in speech processing, and didn't want to be dependent on third-party suppliers when it could do the job itself. BT set to work to produce 
+its own "Speechcard", which was a densely-populated PC format card carrying a Motorola control processor, <i>two</i> 
+<a href="http://en.wikipedia.org/wiki/Motorola_56000">Motorola DSP56000</a>s, a
+custom VLSI chip carrying a "Dynamic Time Warp Engine", and a daughter board with telephone interface circuit compliant with UK
+connection regulations. The speech processing capability of the card was world-leading for the time, and represented 
+the work of a great many people, but my involvement was in turning it into a development platform on which BT could build further trials and 
+applications showcasing its own hardware and algorithms. The card was designed by one engineer, and the control firmware by another; my task was to 
+develop code on the PC side, and this comprised a library of about 50 functions implemented in C that provided application programs with all the 
+control and data management functions necessary to exploit all the capabilities of the card. This meant that applications could carry out recording 
+and replay of audio using a variety of coding methods; they could perform speaker-dependent and speaker-independent isolated word recognition; they
+could combine DTMF touch-tone interactions along with speech, and they could control analogue phone lines.</p>
+
+<p>The project didn't stop with just coding the library: the Speechcard was rolled out to various parts of BT as a platform for developing
+speech services, and as well as maintenance and onward development of the library I was responsible for documentation including the user manual,
+sample programs, user education and consultancy. An interesting part of this challenge was to engineer multi-tasking solutions on the
+essentially single-tasking operating systems on PCs at the time, namely MS-DOS and Microsoft Windows. This was a fascinating activity and
+it led me towards a deep knowledge of the internals of those systems, and solid experience of writing applications in a collaborative
+multi-tasking environment that stood me in good stead as a contractor throughout the 1990s.</p>
+
+<h3>Speech Applications and Service Creation Tools</h3>
+
+<p>Because the Speechcard was equipped with only a single-line analogue interface, it was a terrific tool for PC-based prototyping but it was
+not well suited to large-scale exchange-based solutions. Nonetheless a rack containing 32 channels of discrete single-card PCs linked by 
+a Novell Netware network was constructed and used for trials
+including the Royal Bank of Scotland's "PhoneLine" service, which was the first speech-interactive telephone service in the UK. I invented
+a mechanism for modelling nodal dialogue structures in C language, and developed a number of support and data analysis tools in C++ using the
+object-oriented libraries Turbo Vision (a breathtakingly performant and easy to use character-based windowing interface for DOS
+applications) and ObjectWindows (Borland's superior counterpart to Microsoft's MFC). The Speechcard was also used in the development
+of CallMinder, BT's "answering machine in the network". By this time, the development of speech systems in BT was moving to Solaris, and
+although I was involved early on in developing C++ classes for implementing interactive dialogues, my interests lay much more with how 
+users interacted with the desktop, and I moved away from the speech area.</p>
+
+<h3>So why is this interesting?</h3>
+
+<p>
+This was an important time for me, because it marked my transition from an academic and trialling background to one where people were
+actually using my code in significant numbers. Library code in particular needed to be robust, with thorough error checking and recovery,
+well defined and consistent behaviour with no memory leaks, meaningful error codes and comprehensive documentation. If any of these areas
+fell short, there were plenty of programmers and managers who knew my phone number.</p>
+
+<p>In other words, I learned how to do quality.</P>

@@ -1,0 +1,41 @@
+<script>
+function initSlider() {
+	$('#slider').nivoSlider({effect: 'fade'});
+}
+</script>
+
+<div style="text-align: center">
+    <div class="slider-wrapper theme-default">
+        <div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <img src="img/Slider-CWSplash.png" title="Splash screen from the Campus World Secure File Transfer Client for Mac" />
+            <img src="img/Slider-CW32.png" title="Campus World Secure File Transfer Client for 32-bit Windows" />
+            <img src="img/Slider-CWMac.png" title="... and for Mac OS" />
+            <img src="img/Slider-CW16.png" title="... and for 16-bit Windows" />
+        </div>
+    </div>
+</div>
+
+<h2>Campus World</h2>
+
+<p>As a project, <a href="http://www.mirandanet.ac.uk/ftp/grid.pdf">Campus World</a> did not change the face of 
+education in Britain. It was interesting for a number of other reasons though. The BT Campus World service 
+provided a "walled garden" of over 20,000 pages of education information to help schools make the best use of their
+Internet connections, and it provided secure access to that information by a patented system of cookie-based
+authentication. BT registered a second patent for secure file transfer, which was intended to provide strongly
+encrypted authentication and file transfer to the education community for the transfer of such sensitive 
+information as examination results.</p>
+
+<p>My role was to develop client-side software for both authentication and file transfer, and this was to run
+on 16-bit Windows, 32-bit Windows and MacOS.</p>
+
+<p>Although Java was starting to become popular and there was a small number of cross-platform GUI libraries, 
+there was still no reliable and flexible means of producing applications for multiple target platforms from a
+single code base. My challenge therefore was to factor out as much code as possible into modules that could be 
+recompiled on multiple systems without modification (such as the encryption API and the main internal data 
+structures of the application), and to implement the platform-specific sections (GUI, desktop integration, 
+automated installers) separately for each target platform. I used Borland's ObjectWindows library for the 
+Windows versions, as it continued to offer 16-bit support even though 32-bit had become the norm, and for 
+the Mac I used the Metrowerks CodeWarrior C++ development environment with the absolutely superb 
+<a href="http://en.wikipedia.org/wiki/PowerPlant">PowerPlant</a> class library created by Greg Dow.</p>
+

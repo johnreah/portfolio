@@ -1,0 +1,65 @@
+<script>
+function initSlider() {
+	$('#slider').nivoSlider({effect: 'fade'});
+}
+</script>
+
+<div style="text-align: center">
+    <div class="slider-wrapper theme-default">
+        <div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <img src="img/Slider-BTClickLogos.png" title="Some of the Virtual ISPs powered by BT Click" />
+            <img src="img/Slider-BTClickDialler.png" title="The BT Click dialler. (BonzoNet was a fictitious VISP we invented for testing.)" />
+        </div>
+        <div id="htmlcaption" class="nivo-html-caption">
+            <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+        </div>
+    </div>
+</div>
+
+<h2>BT Click</h2>
+
+<p>At the end of the 1990s broadband penetration was still very low, and most of the UK still accessed the Internet
+using dial-up means with the princely bandwidth of 28.8 kilobits per second (or even 56kbits/s if they were really lucky).
+Not every customer entered into a contract for their Internet service, and there was a market for Pay-As-You-Go
+connections that were charged for by the tariff of the number used to connect. BT provided a white-label dial up 
+service that enabled companies easily to become "Virtual ISPs" by using a custom phone number and driving traffic
+to that number by whatever means they chose. I was part of BT's Client Pack Team, and we had responsibility for 
+providing a variety of mass-market software distributions carrying different VISPs' branding, offering easy Internet
+access for these VISPs' customers. BT's customers and partners included NatWest, Yahoo, Bank of Scotland, Carphone 
+Warehouse, Dell, Microsoft MSN and numerous others.
+</p>
+
+<p>I was the lead software developer in this team, and most of my time was spent on the Dialler application. In
+many ways this was a hugely frustrating experience, because at this time there was still a large installed base
+of original Windows 95 machines, and although there were relatively frequent updates to Microsoft's OS at the time,
+the Dial-Up Networking components of the OS were among the components with the biggest churn, and we had to support
+them all. In the first release of Windows 95, the only way to modify dial-up networkin gsettings was by direct
+access to the Windows registry. In subsequent versions the DUN API was introduced, but the implementation was
+at varying levels of completeness with each version. To support these different releases we produced our
+own dial-up networking interface, so we could maintain a consistent application code base while introducing 
+new networking implementations as new OS variants like Win 95 OSR2, Windows 98 and Windows Millennium Edition 
+arrived on the scene. We also had to maintain a dedicated test suite, so that we could prove operation with a 
+representative set of client hardware running a range of different OS versions. Norton Ghost was crucial!</p>
+
+<p>Coping with changes to the DUN API was only part of the challenge. Various aspects of the user interface required
+custom branding to identify the VISP we were working with. To manage the multiple identities of each build of our 
+software, we defined a standard set of brand assets to be provided by the VISP, and developed a custom build process
+with a configuration parameter that allowed all the brand assets to be imported and the software built
+automatically witha single command.</p>
+
+<p>The build configuration did not stop there: we also had multipe languages to contend with. The method for 
+maintaining localised string resources in Windows applications is well understood, so the challenge for us was to
+work with translators to produce suitable text resources and incoprorate the languages into our automated build
+process. We shipped variants of the BT Click product in English, French and Danish.</p>
+
+<h4>And why was this important?</h4>
+
+<p>Despite the frustration of adapting code to work with multiple Microsoft Operating Systems, which seemed to 
+require a significant amount of effort from us every six months or so, there was a buzz in shipping
+software that was available to upwards of a million users.</p>
+
+<p>It was also an object lesson in the importance of automating as many aspects of the software lifecycle as possible.
+In modern development environments it is common to make heavy use of build tools like Maven and Ant, testing frameworks 
+like JUnit/NUnit and Cobertura, and CIT tools like Hudson/Jenkins and CruiseControl. We worked by the same principles, 
+but, with the exception of "make", we had to build the toolbox ourselves.</p>

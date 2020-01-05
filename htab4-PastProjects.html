@@ -1,0 +1,44 @@
+<h1>A selection of projects I'm pleased to have worked on</h1>
+
+<div id="accordion" class="accordion">
+	<img src="img/Btn-Btsc.png" title="BT Speechcard" />
+	<div style="width:180px;">
+		<h4>BT Speechcard</h4>
+		<p>Interactive Speech Applications</p>
+	</div>
+	
+	<img src="img/Btn-CampusWorld.png" title = "BT Campus World" />
+	<div>
+		<h4>BT Campus World</h4>
+		<p>Cross-Platform Secure File Transfer</p>
+	</div>
+
+	<img src="img/Btn-Apple.png" title="Apple Computer Europe" />
+	<div>
+		<h4>Apple Computer</h4>
+		<p>European Forecasting Database</p>
+	</div>
+
+	<img src="img/Btn-BTClick.png" title="BT Click" />
+	<div>
+		<h4>BT Click</h4>
+		<p>Mass Market White Labelling</p>
+	</div>
+
+	<img src="img/Btn-Websites.png" title="Websites" />
+	<div>
+		<h4>Websites</h4>
+		<p>Well, haven't we all?</p>
+	</div>
+</div>
+
+<div id="content">
+</div>
+
+<script>
+	$("#accordion").tabs("#accordion div", {
+		tabs: 'img', 
+		effect: 'horizontal',
+		onClick: function(event, i) { $("#content").load("vtab" + i + ".html", function(){ initSlider(); } ); return true; }
+	});
+</script>

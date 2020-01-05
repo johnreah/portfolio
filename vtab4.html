@@ -1,0 +1,103 @@
+<script>
+function initSlider() {
+	$('#slider').nivoSlider({effect: 'fade'});
+}
+</script>
+
+<div style="text-align: center">
+    <div class="slider-wrapper theme-default">
+        <div class="ribbon"></div>
+        <div id="slider" class="nivoSlider">
+            <img src="img/Slider-StuartAnderson.jpg" title="#htmlcaption" />
+            <img src="img/Slider-BrendanNoone.jpg" title="A Grails app integrated within a WordPress site" />
+        </div>
+        <div id="htmlcaption" class="nivo-html-caption">
+            This is the website of sculptor <a href="http://www.anderson-sculpture.com/">Stuart Anderson</a>.
+        </div>
+    </div>
+</div>
+
+<h2>Websites</h2>
+
+<p>There can be no-one in the software business who hasn't tinkered with creating websites from time to time. My
+first effort was produced about fifteen years ago using nothing but a text editor, and it featured a gaudy textured 
+background bitmap and had pictures of guitars. As I learned more, I wrote a CGI program (in C!) to read a table of
+tenpin bowling scores from the team I worked in, and present those formatted in an HTML table.</p>
+
+<p>I also dabbled with Microsoft FrontPage, and even produced a site for a real customer, but my interest tailed 
+off for a variety of reasons:</p>
+<ul>
+    <li>I didn't have access to customers wanting to pay me to write websites</li>
+    <li>The best web design tools were really costly, and I wasn't paid for writing websites</li>
+    <li>The landscape was changing so fast that investment in learning became rapidly obsolete</li>
+    <li>Browser incompatibilities meant that as soon as you deviated from the simplest layouts you were committing
+    yourself to lots of laborious cross-browser testing</li>
+    <li>My day job had drifted further and further away from software development</p>
+</ul>
+
+<p>This last point was the most telling, and I was well aware that as a manager I hadn't actually produced 
+anything useful for a depressingly long time. I started becoming involved again when my day job required me to 
+maintain an event management system written by a colleague in Ruby on Rails. This made me realise how much I 
+was missing software development, and also highlighted how much languages and frameworks had come on when I
+wasn't looking! The following year I was called on to deploy a corporate discussion forum system to 
+serve tens of thousands of users. At this time I had a mixed offshore and onshore team to write code for me, but there
+was very little code development at first as we were evaluating and deploying different solutions, mostly built
+on PHP and MySQL. After some early success in deploying a solution and migrating content in from various
+local systems that were deployed around the company, there was a change of policy and it was decided that only a
+Java-based solution would do. The task then became one of selecting and deploying another forum system, and
+migrating all the existing content across. This did require extensive coding, as we were migrating from a MySQL 
+database to an Oracle database via the Java API of the target system, and building an authentication connector
+that would link the forum product to the corporate directory system. I wrote a fair amount of Java code at this 
+time, and the immersion in MySQL/PHP/Java/Tomcat/WebLogic had not only sparked my interest in websites once again,
+but had also brought me back into software development.</p>
+
+<h2>On the server side...</h2>
+
+<h3>Tax Form Database</h3>
+<p>I've been working with web technologies on the server side since writing my first CGI application in C,
+but apart from a couple of brushes with Java/Tomcat (for the BT Forum) and Ruby and Rails (for the BT 
+Hothouse event management system) I haven't done it as a day job. An ex-colleague who runs an ISP asked 
+me to look at embedding a database app within the WordPress site of one of his clients. I decided to implement 
+this in Grails, and the prototype is looking promising.</p>
+
+<h3>The Jokes Database</h3>
+<p>Ever since the advent of email, people have been using it to send jokes. In the early 90s I started 
+gathering these in mailboxes, never to be seen again. During the late 90s I was working in a team that used 
+Microsoft products extensively, and so I moved the collection into an Access database that published its
+content via an IIS service running on my desktop and some ASP pages written in VBScript. It stayed there 
+until Ruby on Rails came along, as mentioned above, at which point I completely reimplemented the database
+and application in Ruby and MySQL. This proved to be a really good learning environment, as it involves
+realistic requirements for user authentication, and has a representative set of database relationships to
+be modelled. When I switched my allegiance from Ruby and Rails to Groovy and Grails in 2010 the site was
+rewritten once again, and it now lives in the Cloud on an Amazon EC2 instance 
+<a href="http://jokes.dyndns.org:8080/Jokes">here</a>. Unless you have an account
+(available on request) you should only be able to access a fairly small selection of inoffensive material.
+Each joke you see will have been rendered via an Ajax call to a RESTful webservice that returns its data
+in JSON format. There's also a <a href="http://jokes.dyndns.org:8080/Jokes/mobile">mobile version</a> 
+if you prefer.</p>
+
+<h2>..and the client side</h2>
+
+<h3>Stuart Anderson Sculpture</h3>
+<p>In 2010 I was asked by a local ISP to write a website for Suffolk-based sculptor Stuart Anderson. As might be
+expected, the brief was strong on artistic guidance but less so on technical steer. The pages were to have a
+minimalist appearance and consist mainly of an interactive gallery of sculpture photographs, so the site 
+clearly needed to be data driven in some way; however there was no decision on what environment the site was 
+to be hosted in, so I couldn't count on having any kind of server-side code or database access. I chose to 
+write the site entirely in HTML and JavaScript, so that the gallery could be hosted on any webserver capable 
+of serving static HTML files, and navigation around the gallery was handled by JS on the client.</p>
+
+<h3>These pages!</h3>
+<p>Having soaked up quite a lot of server-side knowledge over the previous couple of years, in 2011 I 
+looked again at what was happening on the client side. There was a proliferation of platforms on which people
+were consuming content, so the traditional platforms of Mac and PC were now being augmented by smartphones 
+and tablets, and on the desktop there were numerous browsers to be considered, including IE, Firefox, Chrome,
+Opera and Safari. On the plus side however, most of these now do a far better job of adhering to standards
+than they once did, and even IE has become much less troublesome to work with since version 8.</p>
+
+<p>Better still, there are many libraries available to liven up web pages, and these take much of the pain 
+of cross-browser portability away from the web page author. This site makes use of a number of these: the
+underlying cleverness is all in <a href="http://jquery.com/">JQuery</a>, while 
+<a href="http://flowplayer.org/tools/">JQueryTools</a> provides the tabs at the top of the page and
+the sliding accordion on the "past projects" page, and <a href="http://nivo.dev7studios.com/">NivoSlider</a>
+handles the pictures.</p>
