@@ -17,6 +17,8 @@
 		<link rel="stylesheet" href="js/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="js/nivo-slider/jquery.nivo.slider.pack.js"></script>
 		
+		<link href='https://fonts.googleapis.com/css?family=Mandali' rel='stylesheet'>
+		
 		<style>
 			html {
 				background: white;
@@ -34,12 +36,38 @@
 				text-align: left;
 				width: 800px;
 			}
-			#banner {
-				background-image: url('img/JR-banner-mugshot.png');
-				background-repeat: no-repeat;
-				background-position: center;
-				background-color: #C6FFDC;
-				height: 140px;
+			.banner {
+				font-family: Mandali;
+				font-weight: bold;
+				text-align: left;
+				width: 800px;
+				margin: auto;
+			}
+			.banner-left {
+				width: 500px;
+				/*height: 130px;*/
+				display: inline-block;
+			}
+			.banner-right {
+				width: 290px;
+				/*height: 130px;*/
+				text-align: right;
+				float: right;
+			}
+			.banner .title {
+				font-size: 50px;
+				padding: 20px 0 0 20px;
+				line-height: 100%;
+				
+			}
+			.banner .subtitle {
+				font-size: 30px;
+				padding: 20px 0 30px 20px;
+				line-height: 100%;
+			}
+			.banner img {
+				/*padding: 10px 10px 10px 10px;*/
+				height: 150px;
 			}
 			h1 {
 				font-size: 16pt;
@@ -133,11 +161,10 @@
 				/* Mozilla: */
 				background: -moz-linear-gradient(top, #C6FFDC, #FFFFFF);
 				/* Chrome, Safari:*/
-				background: -webkit-gradient(linear,
-				left top, left bottom, from(#C6FFDC), to(#FFFFFF));
+				background: -webkit-gradient(linear, left top, left bottom, from(#CCDDFF), to(#FFFFFF));
 				/* MSIE */
 				filter: progid:DXImageTransform.Microsoft.Gradient(
-				StartColorStr='#C6FFDC', EndColorStr='#FFFFFF', GradientType=0);
+					StartColorStr='#C6FFDC', EndColorStr='#FFFFFF', GradientType=0);
 			}
 		</style>
 		
@@ -157,7 +184,16 @@
 		</script>
 	</head>
 	<body class="gradient">
-		<div id="banner"></div>
+		<div class="banner">
+			<div class="banner-left">
+				<div class="title">John Reah</div>
+				<div class="subtitle">curriculum vitae</div>
+			</div>
+			<div class="banner-right">
+				<img src="img/mugshot.png">
+			</div>
+		</div>
+		
 		<div id="container">
 			<ul class="css-tabs">
 				<li><a href="htab1-Welcome.html">Welcome</a></li>
