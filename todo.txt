@@ -1,0 +1,20 @@
+TODO
+----
+
+Fix cacheing. Added max-age=0 to CodePipeline S3 deployment, but need
+also to add s-maxage(?) to s3 live deployment CLI command for CloudFront.
+https://stackoverflow.com/questions/10435334/set-cache-control-for-entire-s3-bucket-automatically-using-bucket-policies
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#expiration-individual-objects
+
+Change background text  to grey
+
+Change header to transparent to adapt to any background colour
+
+Change mughsot in header
+
+Add shadow to text box
+
+Allow bookmarking of any tab
+
+Rewrite text
+
